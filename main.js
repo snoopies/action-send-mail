@@ -93,7 +93,7 @@ async function main() {
             priority: priority ? priority : undefined,
             attachments: attachments ? (await getAttachments(attachments)) : undefined,
         })
-        sleep(1000000000)
+//        sleep(1000000000)
     } catch (error) {
         core.setFailed(error.message)
     }
