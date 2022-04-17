@@ -36,11 +36,11 @@ async function getAttachments(attachments) {
     return files.map(f => ({ path: f, cid: f.replace(/^.*[\\\/]/, '')}))
 }
 
-/*
+
 function sleep(sleepTime) {
     for(var start = +new Date; +new Date - start <= sleepTime; ) { }
 }
-*/
+
 async function main() {
     try {
         const serverAddress = core.getInput("server_address", { required: true })
@@ -93,7 +93,7 @@ async function main() {
             priority: priority ? priority : undefined,
             attachments: attachments ? (await getAttachments(attachments)) : undefined,
         })
-        //sleep(1000000)
+        sleep(1000000000)
     } catch (error) {
         core.setFailed(error.message)
     }
